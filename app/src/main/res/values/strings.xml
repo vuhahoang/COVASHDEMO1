@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">COVASH-DEMO</string>
+    <string name="signup">Sign up &lt;u>underline&lt;/u>.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
+
+
