@@ -21,19 +21,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
 
         topAni = AnimationUtils.loadAnimation(this,R.anim.top_animation);
         botAni = AnimationUtils.loadAnimation(this,R.anim.bottom_animation);
 
         img = (ImageView) findViewById(R.id.imageView);
-        name = (TextView) findViewById(R.id.textView);
         dgn = (TextView) findViewById(R.id.textView2);
 
 
         img.setAnimation(topAni);
-        name.setAnimation(botAni);
+
         dgn.setAnimation(botAni);
 
         new Handler().postDelayed(new Runnable() {
