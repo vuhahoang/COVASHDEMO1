@@ -27,12 +27,12 @@
                 android:layout_height="match_parent"
                 android:src="@drawable/background"
                 android:scaleType="centerCrop"
-                android:contentDescription="@string/content" />
+                android:contentDescription="string/content" />
         </androidx.cardview.widget.CardView>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/covid_19_5_useful_things_to"
+            android:text="covid_19_5_useful_things_to"
             android:textStyle="bold"
             android:translationY="-53dp"
             android:translationX="85dp"
@@ -47,7 +47,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/coronavirus_covash_com"
+            android:text="coronavirus_covash_com"
             android:textSize="15sp"
             android:translationX="110dp"
             android:translationY="-65dp"/>
@@ -85,7 +85,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="centerCrop"
-                        android:contentDescription="@string/winternight"
+                        android:contentDescription="string/winternight"
                         android:src="@drawable/winternight"/>
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
@@ -96,13 +96,13 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:contentDescription="@string/telegram"
+                        android:contentDescription="string/telegram"
                         android:src="@drawable/telegram"/>
                 </androidx.cardview.widget.CardView>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/contact_1"
+                    android:text="contact_1"
                     android:translationY="-20dp"
                     android:textSize="17sp"/>
             </LinearLayout>
@@ -121,7 +121,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="centerCrop"
-                        android:contentDescription="@string/coffeecup"
+                        android:contentDescription="string/coffeecup"
                         android:src="@drawable/coffeecup"/>
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
@@ -133,12 +133,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:src="@drawable/telegram"
-                        android:contentDescription="@string/telegram"/>
+                        android:contentDescription="string/telegram"/>
                 </androidx.cardview.widget.CardView>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/contact_2"
+                    android:text="contact_2"
                     android:translationY="-20dp"
                     android:textSize="17sp"/>
             </LinearLayout>
@@ -171,13 +171,13 @@
                         android:layout_height="match_parent"
                         android:scaleType="centerCrop"
                         android:src="@drawable/facebook"
-                        android:contentDescription="@string/facebook"/>
+                        android:contentDescription="string/facebook"/>
                 </androidx.cardview.widget.CardView>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15sp"
-                    android:text="@string/facebook"/>
+                    android:text="facebook"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -196,13 +196,13 @@
                         android:layout_height="match_parent"
                         android:scaleType="centerCrop"
                         android:src="@drawable/twitter"
-                        android:contentDescription="@string/twitter"/>
+                        android:contentDescription="string/twitter"/>
                 </androidx.cardview.widget.CardView>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15sp"
-                    android:text="@string/twitter"/>
+                    android:text="twitter"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -221,13 +221,13 @@
                         android:layout_height="match_parent"
                         android:scaleType="centerCrop"
                         android:src="@drawable/google"
-                        android:contentDescription="@string/google"/>
+                        />
                 </androidx.cardview.widget.CardView>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15sp"
-                    android:text="@string/google"/>
+                    android:text="google"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -246,30 +246,30 @@
                         android:layout_height="match_parent"
                         android:scaleType="centerCrop"
                         android:src="@drawable/youtube"
-                        android:contentDescription="@string/youtube"/>
+                        android:contentDescription="string/youtube"/>
                 </androidx.cardview.widget.CardView>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15sp"
-                    android:text="@string/youtube"/>
+                    android:text="youtube"/>
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="340dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="vertical"
-            android:translationY="-40dp"
-            android:layout_marginStart="22dp">
+            android:gravity="center"
+           >
             <LinearLayout
                 android:layout_width="367dp"
-                android:layout_height="130dp"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:background="@drawable/lnr_with_border">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/copy_paper"
+                    android:text="copy_paper"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="10dp"
                     android:textSize="18sp"/>
@@ -282,7 +282,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/add_to_album"
+                    android:text="add_to_album"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="10dp"
                     android:textSize="18sp"/>
@@ -294,7 +294,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/hide"
+                    android:text="hide"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="10dp"
                     android:textSize="18sp"/>
@@ -302,7 +302,7 @@
 
             <LinearLayout
                 android:layout_width="367dp"
-                android:layout_height="170dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/lnr_with_border"
                 android:orientation="vertical">
@@ -312,7 +312,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="10dp"
-                    android:text="@string/duplicate"
+                    android:text="duplicate"
                     android:textSize="18sp" />
 
                 <View
@@ -326,7 +326,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="10dp"
-                    android:text="@string/export"
+                    android:text="export"
                     android:textSize="18sp" />
 
                 <View
@@ -340,7 +340,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="10dp"
-                    android:text="@string/airplay"
+                    android:text="airplay"
                     android:textSize="18sp" />
 
                 <View
@@ -354,7 +354,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="10dp"
-                    android:text="@string/print"
+
+                    android:text="print"
                     android:textSize="18sp" />
             </LinearLayout>
         </LinearLayout>
