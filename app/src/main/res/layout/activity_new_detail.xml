@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".NewDetail"
     android:orientation="vertical">
 
     <FrameLayout
@@ -14,7 +15,7 @@
             android:id="@+id/imageView1"
             android:layout_width="match_parent"
             android:layout_height="625dp"
-            app:srcCompat="@drawable/main_content_background" />
+           android:src="@drawable/background"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -63,14 +64,15 @@
                         />
 
                     <TextView
-                        android:id="@+id/textView4"
+                        android:id="@+id/tvReadmore"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="READMORE"
                         android:textStyle="bold"
                         android:textColor="#388ec2"
                         android:textSize="15sp"
-                        android:paddingBottom="15dp"/>
+                        android:paddingBottom="15dp"
+                        />
 
 
 
@@ -86,34 +88,37 @@
                             android:id="@+id/btn1"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            android:background="@drawable/round_button"
                             android:layout_marginLeft="7dp"
                             android:layout_marginRight="50dp"
+                            android:background="@drawable/round_button"
                             android:textColor="#ffffff"
-                            />
+                            app:backgroundTint="#aad2ed" />
 
                         <Button
                             android:id="@+id/btn2"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            android:background="@drawable/round_button"
                             android:layout_marginRight="50dp"
-                            android:textColor="#ffffff" />
+                            android:background="@drawable/round_button"
+                            android:textColor="#ffffff"
+                            app:backgroundTint="#aad2ed" />
 
                         <Button
                             android:id="@+id/btn3"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            android:background="@drawable/round_button"
                             android:layout_marginRight="50dp"
-                            android:textColor="#ffffff" />
+                            android:background="@drawable/round_button"
+                            android:textColor="#ffffff"
+                            app:backgroundTint="#aad2ed" />
 
                         <Button
                             android:id="@+id/btn4"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:background="@drawable/round_button"
-                            android:textColor="#ffffff" />
+                            android:textColor="#ffffff"
+                            app:backgroundTint="#aad2ed" />
 
                     </LinearLayout>
 
@@ -162,7 +167,9 @@
 
                     <HorizontalScrollView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+
+                        >
 
                         <FrameLayout
                             android:layout_width="wrap_content"
@@ -286,42 +293,100 @@
                                     android:layout_marginTop="5dp"
                                     android:layout_marginBottom="20dp"
                                     android:layout_marginRight="25dp"
+                                    app:cardCornerRadius="12dp"
+                                    >
+
+
+                                    <FrameLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                       >
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:background="@drawable/videos_background"
+                                            >
+
+                                        </LinearLayout>
+
+
+
+
+
+                                        <LinearLayout
+                                            android:layout_gravity="bottom"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:paddingLeft="5dp"
+                                            android:paddingTop="5dp"
+                                            android:background="@color/white"
+                                            android:orientation="vertical"
+                                            >
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:text="Energy"
+                                                android:textStyle="bold"/>
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+
+                                                android:textColor="#828282"
+                                                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+                                                />
+
+                                        </LinearLayout>
+
+
+
+                                    </FrameLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="220dp"
+                                    android:layout_height="140dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="20dp"
+                                    android:layout_marginRight="25dp"
                                     app:cardCornerRadius="12dp" >
 
 
                                     <FrameLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent">
-
                                         <ImageView
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
-                                            android:src="@drawable/publications_background" />
+                                            android:src="@drawable/videos_background"/>
 
-                                        <ImageView
-                                            android:layout_marginTop="60dp"
-                                            android:layout_width="match_parent"
-                                            android:layout_height="90dp"
-                                            android:src="@drawable/white_rectangle"/>
 
-                                        <TextView
-                                            android:layout_marginTop="68dp"
+
+
+
+                                        <LinearLayout
+                                            android:layout_gravity="bottom"
                                             android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
+                                            android:layout_height="wrap_content"
                                             android:paddingLeft="5dp"
                                             android:paddingTop="5dp"
-                                            android:text="Economic"
-                                            android:textStyle="bold" />
+                                            android:background="@color/white"
+                                            android:orientation="vertical"
+                                            >
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:text="Energy"
+                                                android:textStyle="bold"/>
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
 
-                                        <TextView
-                                            android:layout_marginTop="86dp"
-                                            android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
-                                            android:paddingLeft="5dp"
-                                            android:paddingTop="5dp"
-                                            android:textColor="#828282"
-                                            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-                                            />
+                                                android:textColor="#828282"
+                                                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+                                                />
+
+                                        </LinearLayout>
 
                                     </FrameLayout>
 
@@ -343,79 +408,34 @@
                                         <ImageView
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
-                                            android:src="@drawable/publications_background" />
+                                            android:src="@drawable/videos_background"/>
 
-                                        <ImageView
-                                            android:layout_marginTop="60dp"
-                                            android:layout_width="match_parent"
-                                            android:layout_height="90dp"
-                                            android:src="@drawable/white_rectangle"/>
 
-                                        <TextView
-                                            android:layout_marginTop="68dp"
+
+
+                                        <LinearLayout
+                                            android:layout_gravity="bottom"
                                             android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
+                                            android:layout_height="wrap_content"
                                             android:paddingLeft="5dp"
                                             android:paddingTop="5dp"
-                                            android:text="Energy"
-                                            android:textStyle="bold" />
+                                            android:background="@color/white"
+                                            android:orientation="vertical"
+                                            >
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:text="Energy"
+                                                android:textStyle="bold"/>
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
 
-                                        <TextView
-                                            android:layout_marginTop="86dp"
-                                            android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
-                                            android:paddingLeft="5dp"
-                                            android:paddingTop="5dp"
-                                            android:textColor="#828282"
-                                            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-                                            />
+                                                android:textColor="#828282"
+                                                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+                                                />
 
-                                    </FrameLayout>
-
-                                </androidx.cardview.widget.CardView>
-
-                                <androidx.cardview.widget.CardView
-                                    android:layout_width="220dp"
-                                    android:layout_height="140dp"
-                                    android:layout_marginTop="5dp"
-                                    android:layout_marginBottom="20dp"
-                                    android:layout_marginRight="25dp"
-                                    app:cardCornerRadius="12dp" >
-
-
-                                    <FrameLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent">
-
-                                        <ImageView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
-                                            android:src="@drawable/publications_background" />
-
-                                        <ImageView
-                                            android:layout_marginTop="60dp"
-                                            android:layout_width="match_parent"
-                                            android:layout_height="90dp"
-                                            android:src="@drawable/white_rectangle"/>
-
-                                        <TextView
-                                            android:layout_marginTop="68dp"
-                                            android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
-                                            android:paddingLeft="5dp"
-                                            android:paddingTop="5dp"
-                                            android:text="Energy"
-                                            android:textStyle="bold" />
-
-                                        <TextView
-                                            android:layout_marginTop="86dp"
-                                            android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
-                                            android:paddingLeft="5dp"
-                                            android:paddingTop="5dp"
-                                            android:textColor="#828282"
-                                            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-                                            />
+                                        </LinearLayout>
 
                                     </FrameLayout>
 

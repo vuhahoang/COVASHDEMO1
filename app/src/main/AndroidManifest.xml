@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.COVASHDEMO">
-        <activity android:name=".CountryDashboard"></activity>
+        <activity android:name=".ctdetail"></activity>
+        <activity android:name=".NewDetail" />
+        <activity android:name=".ShareUs" />
+        <activity android:name=".CountryDashboard" />
         <activity android:name=".CountrySwitchData" />
         <activity android:name=".homepage" />
         <activity android:name=".registerform" />

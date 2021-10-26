@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -85,6 +86,7 @@ public class DashboardFragment extends Fragment {
     TextView tvCases,tvRecovered,tvCritical,tvActive,tvTodayCases,tvTotalDeaths,tvTodayDeaths,tvAffectedCountries;
     private Context context;
     Button btnCountrydata;
+    CardView cvshare;
 
 
     @Override
@@ -105,12 +107,21 @@ public class DashboardFragment extends Fragment {
         tvAffectedCountries = view.findViewById(R.id.tvAffectedCountries);
         barChart = view.findViewById(R.id.barchart);
         btnCountrydata = view.findViewById(R.id.btnCountryData);
+        cvshare = view.findViewById(R.id.cvshareus);
 
        btnCountrydata.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
                Intent i = new Intent(getContext(),CountrySwitchData.class);
                startActivity(i);
+           }
+       });
+
+       cvshare.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent j = new Intent(getContext(),ShareUs.class);
+               startActivity(j);
            }
        });
 
