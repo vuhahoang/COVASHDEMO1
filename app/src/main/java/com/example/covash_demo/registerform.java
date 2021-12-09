@@ -14,7 +14,7 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class registerform extends AppCompatActivity {
+public class  registerform extends AppCompatActivity {
     private Button signin;
     private Context context;
     private Button signup;

@@ -1,15 +1,24 @@
 package com.example.covash_demo;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.Handler;
+import android.provider.Settings;
 import android.view.View;
 import android.view.Window;
 
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -26,6 +35,9 @@ public class loginform extends AppCompatActivity {
     TextInputLayout EdUsername, EdPassword;
     FirebaseDatabase rootNode;
     DatabaseReference reference;
+    CheckBox checkBox;
+    SharedPreferences sharedpreferences;
+    TextView test;
 
 
     @Override
@@ -37,9 +49,12 @@ public class loginform extends AppCompatActivity {
         signup = (Button) findViewById(R.id.btsignupa);
         EdUsername = (TextInputLayout) findViewById(R.id.edusernamea);
         EdPassword = (TextInputLayout) findViewById(R.id.edpassworda);
+        test = findViewById(R.id.tvtestthoi);
+        checkBox = findViewById(R.id.remembercheckbox);
         Intent k = getIntent();
         EdUsername.getEditText().setText(k.getStringExtra("key1"));
         EdPassword.getEditText().setText(k.getStringExtra("key2"));
+
 
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,10 +63,21 @@ public class loginform extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        if(isConnect(this)){
+            duytridangnhap();
+        }
+
+
+
     }
 
     public void loginUser(View view) {
-        //Validate Login Info
+
+        if(!isConnect(this)){
+
+            showCustomDialog();
+        }
         if (!validateUsername() | !validatePassword()) {
             return;
         } else {
@@ -84,7 +110,8 @@ public class loginform extends AppCompatActivity {
     }
 
     private void isUser() {
-        //progressBar.setVisibility(View.VISIBLE);
+        sharedpreferences = getSharedPreferences("taikhoan",MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedpreferences.edit();
         final String userEnteredUsername = EdUsername.getEditText().getText().toString().trim();
         final String userEnteredPassword = EdPassword.getEditText().getText().toString().trim();
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User");
@@ -97,6 +124,12 @@ public class loginform extends AppCompatActivity {
                     EdUsername.setErrorEnabled(false);
                     String passwordFromDB = snapshot.child(userEnteredUsername).child("password").getValue(String.class);
                     if (passwordFromDB.equals(userEnteredPassword)) {
+                        editor.putString("taikhoan",userEnteredUsername);
+                        editor.putString("matkhau",userEnteredPassword);
+                        if (checkBox.isChecked()){
+                            editor.putBoolean("check",true);
+                        }
+                        editor.commit();
                         Intent j = new Intent(loginform.this,homepage.class);
                         startActivity(j);
                     }else{
@@ -115,6 +148,57 @@ public class loginform extends AppCompatActivity {
 
             }
         });
+
+
+
+    }
+
+    private void duytridangnhap(){
+        sharedpreferences = getSharedPreferences("taikhoan",MODE_PRIVATE);
+        String taikhoan = sharedpreferences.getString("taikhoan","taikhoan");
+        String passs = sharedpreferences.getString("matkhau","matkhau");
+
+        EdUsername.getEditText().setText(taikhoan);
+        EdPassword.getEditText().setText(passs);
+        checkBox.setChecked(sharedpreferences.getBoolean("check",true));
+
+        if(EdUsername.getEditText().getText().toString().equals(taikhoan) || EdPassword.getEditText().getText().toString().equals(passs)){
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent i = new Intent(loginform.this,homepage.class);
+                    startActivity(i);
+                }
+            },1);
+        }
+    }
+
+    private boolean isConnect(loginform loginform){
+        ConnectivityManager connectivityManager = (ConnectivityManager) loginform.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo wificonnect = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+        NetworkInfo mobileconnect = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+
+        if(mobileconnect != null && mobileconnect.isConnected() || (wificonnect != null && wificonnect.isConnected())){
+            return true;
+        }else {return false;}
+    }
+
+    private void showCustomDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(loginform.this);
+        builder.setMessage("Please connect to the internet to using app").setCancelable(false).setPositiveButton("Connect", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
+            }
+        })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        startActivity(new Intent(getApplicationContext(),loginform.class));
+                        finish();
+                    }
+                });
+        builder.show();
     }
 
 

@@ -21,6 +21,7 @@ public class ShareUs extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(ShareUs.this,homepage.class);
                 startActivity(i);
+                
             }
         });
     }
